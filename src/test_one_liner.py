@@ -1,5 +1,5 @@
 import unittest
-from one_liner import (
+from ineline import (
     split_nodes_delimiter,
     extract_markdown_images,
     extract_markdown_links,
