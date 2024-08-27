@@ -2,6 +2,7 @@ import os
 import shutil
 from textnode import TextNode
 from htmlnode import ParentNode, HTMLNode, LeafNode
+from generate import generate_page, generate_pages_recursive
 
 def generate_output(source, destination):
     if not os.path.exists(source):
@@ -27,12 +28,14 @@ def copy_paste(source, destination):
 
 
 
-
-
 def main():
     source  = "/home/deusvitae/workspace/github.com/SumDeusVitae/static_site_generator/static"
     destination = "/home/deusvitae/workspace/github.com/SumDeusVitae/static_site_generator"
     generate_output(source, destination)
+    from_path = "/home/deusvitae/workspace/github.com/SumDeusVitae/static_site_generator/content"
+    tempalte_path = "/home/deusvitae/workspace/github.com/SumDeusVitae/static_site_generator/template.html"
+    dest_path = "./public"
+    generate_pages_recursive(from_path,tempalte_path, dest_path)
 
 main()
 
